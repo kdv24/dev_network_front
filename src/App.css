@@ -8,8 +8,7 @@
 
 .App-header {
   height: 150px;
-  padding: 20px;
-  text-align: center;
+  /* padding: 20px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +23,14 @@
 
 .userlist {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   border: 2px solid #8E2350;
+  padding: 20px;
+}
+
+.user {
+  border: 1px dotted gray;
+  padding-left: 10px;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import axios from 'axios';
 
 class UsersContainer extends Component {
 
@@ -11,7 +12,7 @@ class UsersContainer extends Component {
 }
 
 componentDidMount() {
-  fetch('http://localhost:3001/api/v1/users.json')
+  axios.get('http://localhost:3001/api/v1/users.json')
   .then(response => {
     console.log(response)
     this.setState({users: response.data})
@@ -21,8 +22,16 @@ componentDidMount() {
 
   render() {
     return (
-      <div className="userlist">
-        Users
+      <div>
+        <h3 style={{textAlign: 'center'}}>Users</h3>
+        {this.state.users.map((user) => {
+          return(
+            <div className="user" key={user.id} >
+              <h4>{user.name}</h4>
+              <h5>{user.email}</h5>
+            </div>
+          )
+        })}
       </div>
     )
   }

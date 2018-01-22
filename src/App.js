@@ -12,7 +12,9 @@ class App extends Component {
         <p className="App-intro">
           By Developers.  For Developers.
         </p>
-        <UsersContainer />
+        <div className='userlist'>
+          <UsersContainer />
+        </div>
       </div>
     );
   }
